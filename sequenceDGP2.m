@@ -3,7 +3,7 @@ dist=1; % distribution for the bootstrap
 
 
 
-for P=80 % OOS length
+for P=[120] % OOS length
 
     for tau=1               % horizon
         
@@ -13,7 +13,7 @@ for P=80 % OOS length
             maxb=0.8;
         end
 
-        for b=[maxb 0]          % =0, null
+        for b=[0 maxb]          % =0, null
 
 
             R=P;                % equal length
