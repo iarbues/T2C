@@ -130,11 +130,13 @@ MSEi=squeeze(MSEi);
 
 [~, iopt]=min(mean(LA,1),[],2);
 
-for l=1:k
-    maxtij(l)=max(tij(iopt(l),:,l));
-end
+%for l=1:k
+%    maxtij(l)=max(tij(iopt(l),:,l));
+%end
 
-MSEnaive=maxtij';
+%MSEnaive=maxtij';
+
+MSEnaive=nan;
 
 
 meanA=mean(LA);
