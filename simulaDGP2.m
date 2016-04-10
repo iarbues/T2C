@@ -4,7 +4,7 @@ n=8;
 
 y=[randn(1,M); zeros(T-1,M)];
 
-C=sqrtm(toeplitz(1:-0.1:0.3));
+C=sqrtm(toeplitz(1:-0.05:0.65));
 
 X=randn(T,n)*C;
 

@@ -6,7 +6,7 @@
 
 P=floor(T*lambda);
 
-M=400; % number of simulations of the test and the bootstrap
+M=200; % number of simulations of the test and the bootstrap
 MB=400;
 
 cont=0;

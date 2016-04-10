@@ -13,7 +13,7 @@ for P=80 % OOS length
             maxb=0.8;
         end
 
-        for b=[0 maxb]          % =0, null
+        for b=0          % =0, null
 
 
             R=P;                % equal length
