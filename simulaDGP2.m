@@ -4,9 +4,16 @@ n=8;
 
 y=[randn(1,M); zeros(T-1,M)];
 
-C=sqrtm(toeplitz(1:-0.1:0.3));
+%C1=sqrtm(toeplitz(1:-0.01:0.97));
+C1=sqrtm(toeplitz(1:-0.0025:0.9925));
 
-X=randn(T,n)*C;
+X=nan(T,8);
+
+X(:,2:5)=randn(T,4)*C1;
+
+C2=sqrtm(toeplitz(1:-0.1:0.7));
+
+X(:,[1 6:8])=randn(T,4)*C2;
 
 u=randn(T,1);
 

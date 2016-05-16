@@ -3,7 +3,7 @@
 
 P=floor(T*lambda);
 
-M=400; % number of simulations of the test
+M=500; % number of simulations of the test
 MB=500; % number of bootstrap simulations for each test
 
 cont=0;
@@ -45,7 +45,7 @@ for cont=1:M
     
     % lags of y
     
-    for j=0:maxlag                  
+    for j=0:maxlag
         
         ylags(:,j+1)=y((1+maxlag-j):(T-j));
         
@@ -71,6 +71,8 @@ for cont=1:M
     
     MSEmM_pval(cont)=mean(MSEmM_boot_k>MSEmM);
     MSEMm_pval(cont)=mean(MSEMm_boot_k>MSEMm);
+    
+    
     
     % Method 0
     
@@ -126,6 +128,8 @@ for cont=1:M
     
     MSEnaive_1b_pval(cont)=mean(MSEnaive_boot_1b>MSEnaive_1b);
     
+    
+    
     % Method 2
     
     modB=[];
@@ -142,6 +146,31 @@ for cont=1:M
     
     MSEnaive_2_pval(cont)=mean(MSEnaive_boot_2>MSEnaive_2);
     
+    if true
+        
+        % Method 3
+        
+        MSEnaive_3_pval(cont)=0;
+        
+        for i=1:length(sA)
+            
+            modB=[];
+            for j=1:length(sB)
+                if all(ismember(sA{i},sB{j}))
+                    modB=[modB;j];
+                end
+            end
+            
+            [MSEnaive_3, ~, ~, ~, wer, meanA_2, meanB_2]=...
+                grc_comp(y(1+maxlag:end),Xr,tau,sA(i),sB(modB),lambda,ones(1,length(modB)),scheme);
+            [qwe, asd, zxc, MSEnaive_boot_3]=...
+                critval_bootstrap_comp(y(1+maxlag:end),Xr,sA(i),sB(modB),lambda,tau,0.9,MB,dist,ones(1,length(modB)),scheme);
+            
+            MSEnaive_3_pval(cont)=max(MSEnaive_3_pval(cont),mean(MSEnaive_boot_3>MSEnaive_3));
+            
+        end
+        
+    end
     
     
 end

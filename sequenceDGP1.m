@@ -1,9 +1,9 @@
 
 dist=1; % distribution for the bootstrap
 
-for P=[80 40 120]   % OOS length
+for P=80   % OOS length
     for tau=1       % horizon
-        for b=[0 0.4]   % =0, null
+        for b=[0.1 0.2]   % =0, null
 
             R=P;                    % equal length
             T=P+R;

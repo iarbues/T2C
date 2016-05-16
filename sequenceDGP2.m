@@ -3,7 +3,7 @@ dist=1; % distribution for the bootstrap
 
 
 
-for P=[120] % OOS length
+for P=80 % OOS length
 
     for tau=1               % horizon
         

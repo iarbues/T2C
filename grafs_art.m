@@ -1,0 +1,8 @@
+
+graf(1,80,80,0,1,1,[true true false true true false false],{'k-','k:','','k-+','k-o','',''},[1 1 1 1 1 1 1 ],'graf_DGP1_H0')
+hold off
+graf(2,80,80,0,1,1,[true true false true true false false],{'k-','k:','','k-+','k-o','',''},[1 1 1 1 1 1 1 ],'graf_DGP2_H0')
+hold off
+graf(1,80,80,0.1,1,1,[true true false false false true true],{'k-','k:','','','','k-o','k-+'},[1 1 1 1 1 1 1 ],'graf_DGP1_H1')
+hold off
+graf(2,80,80,0.4,1,1,[true true false false false true true],{'k-','k:','','','','k-o','k-+'},[1 1 1 1 1 1 1 ],'graf_DGP2_H1')

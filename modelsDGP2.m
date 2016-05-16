@@ -20,7 +20,7 @@ for j=0:(2^nx-1)
         end
     end
     
-    if any(ismember([1 6 7 8],s))
+    if any(ismember([1 7 8],s))
         sB{end+1}=[1 2 2+s];       % intercept, lag of y, x1,x2, ...
     else        
         sA{end+1}=[1 2 2+s];       
