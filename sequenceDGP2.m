@@ -8,7 +8,7 @@ for P=80 % OOS length
     for tau=1               % horizon
         
         if tau==1,
-            maxb=0.4;
+            maxb=0.2;
         else
             maxb=0.8;
         end
